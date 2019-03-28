@@ -49,7 +49,7 @@ public class DataCalendario {
 		int m=0;
 		if (s=="Janeiro") 	m=1;		
 		if (s=="Fevereiro") m=2;
-		if (s=="MarÁo") 	m=3;
+		if (s=="Mar√ßo") 	m=3;
 		if (s=="Abril") 	m=4;
 		if (s=="Maio") 		m=5;
 		if (s=="Junho") 	m=6;
@@ -87,7 +87,7 @@ public class DataCalendario {
 		}
 	}
 	
-	//MÈtodo para verificar se a data de entrada È valida
+	//M√©todo para verificar se a data de entrada √© valida
 	public boolean isDataValida(int dia, int mes, int ano) {
 		if (dia<1 || ano<1582 || mes >12 || mes<1 || dia>31) {
 			return false;
@@ -121,7 +121,7 @@ public class DataCalendario {
 		}	
 	}
 	
-	//MÈtodo para verificar se o ano È bissexto, È utilizado no mÈtodo isDataValida
+	//M√©todo para verificar se o ano √© bissexto, √© utilizado no m√©todo isDataValida
 	public boolean isBissexto(int ano) {
 		if ((ano%4 == 0) && (ano%100 != 0 || ano%400 == 0)) {
 			return true;
@@ -130,7 +130,7 @@ public class DataCalendario {
 			return false;
 		}	
 	}
-	//MÈtodo que converte o mes dado por valores inteiros em uma string com o formato dd/mm/aaaa
+	//M√©todo que converte o mes dado por valores inteiros em uma string com o formato dd/mm/aaaa
 	public String toString(int dia, int mes, int ano){
 		StringBuilder dados = new StringBuilder();
 		dados.append(this.getDia());
@@ -139,8 +139,8 @@ public class DataCalendario {
 		dados.append("/");
 		dados.append(this.getAno());
 		return dados.toString();
-		}
-	//MÈtodo que vrifica se duas datas s„o iguais 
+	}
+	//M√©todo que vrifica se duas datas s√£o iguais 
 	public boolean equals(Object objeto) {
 		DataCalendario aux=(DataCalendario)objeto;
 		if (this.getDia() == aux.getDia() && this.getMes() == aux.getMes() && this.getAno() == aux.getAno())	return true;
