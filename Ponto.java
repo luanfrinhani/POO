@@ -8,9 +8,6 @@ public class Ponto {
 	public Ponto(double x,double y) throws Exception{
 		this.setPonto(x,y);
 	}
-	public Ponto() throws Exception{
-		this(0,0);
-	}
 	public Ponto(String P) throws Exception{
 		double coordx,coordy;	
 		int aux1;
@@ -19,6 +16,9 @@ public class Ponto {
 		aux1 = P.indexOf(3);
 		coordy = Double.parseDouble(P.substring(aux1,aux1+1));
 		this.setPonto(coordx,coordy);
+	}
+	public Ponto() throws Exception{
+		this(0,0);
 	}
 	public double getX() {
 		return this.x;
@@ -96,10 +96,45 @@ public class Ponto {
 			return false;
 		}
 	}
-	public double distancia(Ponto P) {
+	public static double distancia(Ponto P) {
 		double dist = 0.0;
 		dist = Math.sqrt(Math.pow((P.getX() - Uso.pontoArg.getX()),2) + Math.pow((P.getY() - Uso.pontoArg.getY()),2));
 		return dist;
 	}
-	
+	public static double distancia(double x1,double y1) throws Exception{
+		double dist = 0.0;
+		Ponto P = new Ponto(x1,y1);
+		dist = Math.sqrt(Math.pow((P.getX() - Uso.pontoArg.getX()),2) + Math.pow((P.getY() - Uso.pontoArg.getY()),2));
+		return dist;
+	}
+	public double distancia(double x1,double y1,double x2,double y2) throws Exception{
+		double dist = 0.0;
+		Ponto P = new Ponto(x1,y1);
+		Ponto P2 = new Ponto(x2,y2);
+		dist = Math.sqrt(Math.pow((P.getX() - P2.getX()),2) + Math.pow((P.getY() - P2.getY()),2));
+		return dist;
+	}
+	public static double distancia(Ponto P,Ponto P2) {
+		double dist = 0.0;
+		dist = Math.sqrt(Math.pow((P.getX() - P2.getX()),2) + Math.pow((P.getY() - P2.getY()),2));
+		return dist;
+	}
+	public static double distanciaDaOrigem() {
+		double dist = 0.0;
+		dist = Math.sqrt(Math.pow(Uso.pontoArg.getX(),2) + Math.pow(Uso.pontoArg.getY(),2));
+		return dist;
+	}
+	public int compareTo(Ponto P) throws Exception{
+		double x1 = P.getX(), y1 = P.getY();
+		double dist1 = distancia(x1,y1,0,0),dist2 = distancia(Uso.pontoArg.getX(),Uso.pontoArg.getY(),0,0);
+		if (dist1 > dist2) {
+			return 1;
+		}
+		if (dist2 < dist2) {
+			return -1;
+		}
+		else {
+			return 0;
+		}
+	}
 }
