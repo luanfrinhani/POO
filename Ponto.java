@@ -4,7 +4,7 @@ public class Ponto {
 	private double x,y;
 	private static final double Default_LimSup = 500,Default_LimIn = 0;
 	private static double LimiteSup = Default_LimSup, LimiteInf = Default_LimIn;
-	
+	//Construtores da classe
 	public Ponto(double x,double y) throws Exception{
 		this.setPonto(x,y);
 	}
@@ -20,6 +20,7 @@ public class Ponto {
 	public Ponto() throws Exception{
 		this(0,0);
 	}
+	//Métodos de inferface gets
 	public double getX() {
 		return this.x;
 	}
@@ -32,6 +33,7 @@ public class Ponto {
 	public double getLimInf() {
 		return Ponto.LimiteInf;
 	}
+	//Métodos de interface sets
 	public static void setLimSup(double Limite_Sup) {
 		Ponto.LimiteSup = Limite_Sup;
 	}
@@ -58,6 +60,7 @@ public class Ponto {
 			throw new Exception("Erro");
 		}
 	}
+	//Método equals para analisar se dois pontos são iguais
 	public boolean equals(Object Objeto) {
 		Ponto P = (Ponto)Objeto;
 		if (this.getX() == P.getX() && this.getY() == P.getY()) {
@@ -67,6 +70,7 @@ public class Ponto {
 			return false;
 		}
 	}
+	//Método para conversão para uma string com o formato "(x,y)"
 	public String toString() {
 		StringBuilder dado = new StringBuilder();
 		dado.append("(");
@@ -76,18 +80,21 @@ public class Ponto {
 		dado.append(")");
 		return dado.toString();
 	}
+	//Método clonar que recebe um objeto e o clona com as mesmas informação e o retorna
 	public static Ponto clonar(Ponto P) throws Exception{
 		Ponto ponto = new Ponto();
 		ponto.x = P.x;
 		ponto.y = P.y;
 		return ponto;
 	}
+	//Método que cria um novo objeto, adicionando nos seus campos os valores trocados de x e y do objeto recebido
 	public static Ponto criaSwap(Ponto P) throws Exception{
 		Ponto ponto = new Ponto();
 		ponto.x = P.y;
 		ponto.y = P.x;
 		return ponto;
 	}
+	//Método que mostra se dois pontos possuem eixos comuns
 	public static boolean temEixoComum(Ponto P) {
 		if (Math.abs(P.getX()) == Math.abs(Uso.pontoArg.getX()) || Math.abs(P.getY()) == Math.abs(Uso.pontoArg.getY())) {
 			return true;
@@ -96,6 +103,7 @@ public class Ponto {
 			return false;
 		}
 	}
+	//Métodos sobrecarregados para calculo de distancia
 	public static double distancia(Ponto P) {
 		double dist = 0.0;
 		dist = Math.sqrt(Math.pow((P.getX() - Uso.pontoArg.getX()),2) + Math.pow((P.getY() - Uso.pontoArg.getY()),2));
@@ -119,11 +127,13 @@ public class Ponto {
 		dist = Math.sqrt(Math.pow((P.getX() - P2.getX()),2) + Math.pow((P.getY() - P2.getY()),2));
 		return dist;
 	}
+	//Método para calcular a distancia de um ponto ate a origem
 	public static double distanciaDaOrigem() {
 		double dist = 0.0;
 		dist = Math.sqrt(Math.pow(Uso.pontoArg.getX(),2) + Math.pow(Uso.pontoArg.getY(),2));
 		return dist;
 	}
+	//Método que compara dois objetos em relacao a sua distancia até a origem
 	public static int compareTo(Ponto P) throws Exception{
 		double dist1 = P.distanciaDaOrigem(),dist2 = Uso.pontoArg.distanciaDaOrigem();
 		if (dist1 > dist2) {
