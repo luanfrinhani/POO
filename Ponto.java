@@ -76,13 +76,13 @@ public class Ponto {
 		dado.append(")");
 		return dado.toString();
 	}
-	public Ponto clonar(Ponto P) throws Exception{
+	public static Ponto clonar(Ponto P) throws Exception{
 		Ponto ponto = new Ponto();
 		ponto.x = P.x;
 		ponto.y = P.y;
 		return ponto;
 	}
-	public Ponto criaSwap(Ponto P) throws Exception{
+	public static Ponto criaSwap(Ponto P) throws Exception{
 		Ponto ponto = new Ponto();
 		ponto.x = P.y;
 		ponto.y = P.x;
@@ -124,9 +124,8 @@ public class Ponto {
 		dist = Math.sqrt(Math.pow(Uso.pontoArg.getX(),2) + Math.pow(Uso.pontoArg.getY(),2));
 		return dist;
 	}
-	public int compareTo(Ponto P) throws Exception{
-		double x1 = P.getX(), y1 = P.getY();
-		double dist1 = distancia(x1,y1,0,0),dist2 = distancia(Uso.pontoArg.getX(),Uso.pontoArg.getY(),0,0);
+	public static int compareTo(Ponto P) throws Exception{
+		double dist1 = P.distanciaDaOrigem(),dist2 = Uso.pontoArg.distanciaDaOrigem();
 		if (dist1 > dist2) {
 			return 1;
 		}
