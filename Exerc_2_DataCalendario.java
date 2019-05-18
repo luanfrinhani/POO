@@ -1,5 +1,3 @@
-package com.DataPasta;
-
 public class DataCalendario{
 	private int dia, mes,ano;
 	//Método isDataValida nao deve ser estatico, pois sempre iremos verificar uma data especifica
@@ -9,8 +7,11 @@ public class DataCalendario{
 	public DataCalendario(int dia, int mes, int ano) 	throws Exception {
 			this.setData(dia,mes,ano);
 	}
-	//Construtor default
 	
+	public DataCalendario(String _dtStr) throws Exception {
+		this.setData(_dtStr);
+	}
+	//Construtor default
 	public DataCalendario() 	throws Exception{
 		this(1,1,1900);
 	}
@@ -120,22 +121,21 @@ public class DataCalendario{
 		}
 	}
 	//Classe compareTo static para comparar uma data passada como argumento e um objeto criado na classe Uso
-	public static int compareTo(DataCalendario Data) {
-		DataCalendario data1 = Uso.dataArg;
-		if (Data.getAno()>data1.getAno()){
+	public int compareTo(DataCalendario Data) {
+		if (Data.getAno()>this.getAno()){
 			return 1;
 		}
 		else {
-			if (Data.getMes()>data1.getMes()) {
+			if (Data.getMes()>this.getMes()) {
 				return 1;
 			}
 			else {
-				if (Data.getDia()>data1.getDia()) {
+				if (Data.getDia()>this.getDia()) {
 					return 1;
 				}
 			}
 		}
-		if (Data.getDia() == data1.getDia() && Data.getMes() == data1.getMes() && data1.getAno() == Uso.dataArg.getAno()) {
+		if (Data.getDia() == this.getDia() && Data.getMes() == this.getMes() && this.getAno() == this.getAno()) {
 			return 0;
 		}
 		else {
