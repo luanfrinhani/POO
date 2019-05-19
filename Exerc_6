@@ -1,0 +1,3 @@
+*Sim, pois a data a ser verificada não é de um objeto e sim uma data passada a ela.
+*Sim, pelo mesmo motivo do isDataValida ser estatico, não é necessário um objeto para chamar o método.
+*Não, pois para isso é necessário um objeto para ser feita a chamada, tornando o método não estático.
