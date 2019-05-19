@@ -1,0 +1,8 @@
+* Sobrecarregamento é quando cria-se uma nova versão de um método já existente em sua classe, utilizando parâmetros diferentes.
+Sobreposição é utilizado quando cria-se um método já existente na classe superior a sua, onde o método criado na nova classe
+tem prioridade.
+
+*Na vinculação dinâmica o método escolhido se dá em tempo de execução e não em tempo de compilação, como na vinculação estática.
+
+*A escolha do método sobrecarregado a ser utilizado se dá no tempo de execução de um programa, assim como um método herdado de uma
+classe pai. O polimorfismo é a escolha do método no seu tempo de execução.
