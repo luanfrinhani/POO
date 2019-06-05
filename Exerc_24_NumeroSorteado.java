@@ -9,7 +9,7 @@ import java.util.TreeSet;
  * <p>
  * Oferece métodos de sortear numeros aleatorios sem repedições.
  * 
- * @author Ayrton S. C.
+ * @author Luan S. F.
  * @version 1.0 (junho - 2019)
  */
 public class NumeroSorteado implements Serializable{
