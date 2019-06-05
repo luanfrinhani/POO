@@ -1,5 +1,3 @@
-package exerc_24;
-
 import java.io.Serializable;
 import java.util.*;
 
@@ -30,17 +28,17 @@ public class ConjuntoSorteio implements Serializable{
 	public void insere(Sorteio sorteio, int num_sort) throws Exception {
 		this.valores.add(sorteio);
 		for (int i = 1;i<num_sort;i++) {
-			if (DataCalendario.isDataValida(sorteio.getData().getDia()+1, sorteio.getData().getMes(), sorteio.getData().getAno())) {
-				this.valores.add(new Sorteio(sorteio.getData().getDia()+1,sorteio.getData().getMes(), sorteio.getData().getAno()));
-				sorteio = new Sorteio(sorteio.getData().getDia()+1, sorteio.getData().getMes(), sorteio.getData().getAno());
+			if (DataCalendario.isDataValida(sorteio.getDia()+1, sorteio.getMes(), sorteio.getAno())) {
+				this.valores.add(new Sorteio(sorteio.getDia()+1,sorteio.getMes(), sorteio.getAno()));
+				sorteio = new Sorteio(sorteio.getDia()+1, sorteio.getMes(), sorteio.getAno());
 			}
-			else if (DataCalendario.isDataValida(1, sorteio.getData().getMes()+1, sorteio.getData().getAno())) {
-				this.valores.add(new Sorteio(1, sorteio.getData().getMes()+1,sorteio.getData().getAno()));
-				sorteio = new Sorteio(1, sorteio.getData().getMes()+1,sorteio.getData().getAno());
+			else if (DataCalendario.isDataValida(1, sorteio.getMes()+1, sorteio.getAno())) {
+				this.valores.add(new Sorteio(1, sorteio.getMes()+1,sorteio.getAno()));
+				sorteio = new Sorteio(1, sorteio.getMes()+1,sorteio.getAno());
 			}
-			else if (DataCalendario.isDataValida(1, 1, sorteio.getData().getAno()+1)) {
-				this.valores.add(new Sorteio(1, 1, sorteio.getData().getAno() + 1));
-				sorteio = new Sorteio(1, 1, sorteio.getData().getAno()+1);
+			else if (DataCalendario.isDataValida(1, 1, sorteio.getAno()+1)) {
+				this.valores.add(new Sorteio(1, 1, sorteio.getAno() + 1));
+				sorteio = new Sorteio(1, 1, sorteio.getAno()+1);
 			}
 			else {
 				throw new Exception("Data invalida");
@@ -58,21 +56,21 @@ public class ConjuntoSorteio implements Serializable{
 	 * @param num_sort quantidade de numeros sorteados
 	 */
 	
-	public void insere(int d, int m, int a, NumerosSorteados sorteio_v, int num_sort) throws Exception {
+	public void insere(int d, int m, int a, NumeroSorteado sorteio_v, int num_sort) throws Exception {
 		this.valores.add(new Sorteio(d,m,a,sorteio_v));
 		aux = new Sorteio(d,m,a,sorteio_v);
 		for (int i = 1;i<num_sort;i++) {
-			if (DataCalendario.isDataValida(aux.getData().getDia()+1, aux.getData().getMes(), aux.getData().getAno())) {
-				this.valores.add(new Sorteio(aux.getData().getDia()+1, aux.getData().getMes(), aux.getData().getAno()));
-				aux = new Sorteio(aux.getData().getDia()+1, aux.getData().getMes(), aux.getData().getAno());
+			if (DataCalendario.isDataValida(aux.getDia()+1, aux.getMes(), aux.getAno())) {
+				this.valores.add(new Sorteio(aux.getDia()+1, aux.getMes(), aux.getAno()));
+				aux = new Sorteio(aux.getDia()+1, aux.getMes(), aux.getAno());
 			}
-			else if (DataCalendario.isDataValida(1, aux.getData().getMes()+1, aux.getData().getAno())) {
-				this.valores.add(new Sorteio(1, aux.getData().getMes()+1,aux.getData().getAno()));
-				aux = new Sorteio(1, aux.getData().getMes()+1, aux.getData().getAno());
+			else if (DataCalendario.isDataValida(1, aux.getMes()+1, aux.getAno())) {
+				this.valores.add(new Sorteio(1, aux.getMes()+1,aux.getAno()));
+				aux = new Sorteio(1, aux.getMes()+1, aux.getAno());
 			}
-			else if (DataCalendario.isDataValida(1, 1, aux.getData().getAno()+1)) {
-				this.valores.add(new Sorteio(1, 1, aux.getData().getAno() + 1));
-				aux = new Sorteio(1, 1,aux.getData().getAno()+1);
+			else if (DataCalendario.isDataValida(1, 1, aux.getAno()+1)) {
+				this.valores.add(new Sorteio(1, 1, aux.getAno() + 1));
+				aux = new Sorteio(1, 1,aux.getAno()+1);
 			}
 			else {
 				throw new Exception("Data invalida");
@@ -96,16 +94,16 @@ public class ConjuntoSorteio implements Serializable{
 		aux = new Sorteio(d,m,a,quant,limInf,limSup);
 		this.valores.add(aux);
 		for (int i = 1;i<num_sort;i++) {
-			if (DataCalendario.isDataValida(aux.getData().getDia()+1, aux.getData().getMes(), aux.getData().getAno())) {
-				aux = new Sorteio(aux.getData().getDia()+1, aux.getData().getMes(), aux.getData().getAno(),quant,limInf,limSup);
+			if (DataCalendario.isDataValida(aux.getDia()+1, aux.getMes(), aux.getAno())) {
+				aux = new Sorteio(aux.getDia()+1, aux.getMes(), aux.getAno(),quant,limInf,limSup);
 				this.valores.add(aux);
 			}
-			else if (DataCalendario.isDataValida(1, aux.getData().getMes()+1, aux.getData().getAno())) {
-				aux = new Sorteio(1, aux.getData().getMes()+1, aux.getData().getAno(),quant,limInf,limSup);
+			else if (DataCalendario.isDataValida(1, aux.getMes()+1, aux.getAno())) {
+				aux = new Sorteio(1, aux.getMes()+1, aux.getAno(),quant,limInf,limSup);
 				this.valores.add(aux);
 			}
-			else if (DataCalendario.isDataValida(1, 1, aux.getData().getAno()+1)) {
-				aux = new Sorteio(1, 1, aux.getData().getAno()+1,quant,limInf,limSup);
+			else if (DataCalendario.isDataValida(1, 1, aux.getAno()+1)) {
+				aux = new Sorteio(1, 1, aux.getAno()+1,quant,limInf,limSup);
 				this.valores.add(aux);
 			}
 			else {
