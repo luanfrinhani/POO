@@ -2,8 +2,8 @@ package prova;
 import java.util.*;
 /**
  * Encapsula a classe LinkedList facilitando o seu uso e tipificando os objetos para
- * inclus„o como inst‚ncias da classe Agenda
- 
+ * inclus√£o como inst√¢ncias da classe Agenda
+ * <p>
  * @author Luan S. F.
  * @version 1.0 (junho-2019)
 */
@@ -19,9 +19,9 @@ public class Agenda {
 		return this.itens;
 	}
 	/**
-  	 * Insere uma inst‚ncia da classe Agenda
+  	 * Insere uma inst√¢ncia da classe Agenda
   	 *
-  	 * @param item objeto a ser incluÌdo da coleÁ„o
+  	 * @param item objeto a ser inclu√≠do da cole√ß√£o
   	 */
 
 	public void insereItem(ItemAgenda item) {
@@ -43,6 +43,7 @@ public class Agenda {
 		return metas;
 	}
 	/**Informa os lembretes conforme os minutos de antecedencia que sao mostrados, para ser lembrados
+	 * 
 	 * @return retorna os lembretes ordenados, conforme os seus minutos
 	 */
 	public List lembretesMinutos() {
@@ -57,6 +58,7 @@ public class Agenda {
 		return lembretes_ordenados;
 	}
 	/**Informa os eventos ordenados por seu local
+	 * 
 	 * @return os eventos ordenados
 	 */
 	public List eventosLocal() {
@@ -81,6 +83,7 @@ public class Agenda {
 	 * 
 	 * @param _inicial
 	 * @param _final
+	 * 
 	 * @return retorna os eventos entre as datas informadas
 	 */
 	public List itensIntervalo(DataCalendario inicio, DataCalendario fim) {
@@ -95,7 +98,7 @@ public class Agenda {
 		return itensDatas;
 	}
 	/**
-	 * SobreposiÁ„o do mÈtodo toString
+	 * Sobreposi√ß√£o do m√©todo toString
 	 * 
 	 * @return retorna uma String com todos os dados
 	 */
