@@ -2,9 +2,7 @@ package prova;
 /**
  * Usada para organizar a horario, com o objetivo de receber e modificar varios tipos de horarios dada pelo
  * usuario
- *
  * <p>
- *
  * @author Luan S. F.
  * @version 1.0 (junho - 2019)
  */
@@ -21,6 +19,7 @@ public class Horario {
      * @param hora da hora do horario
      * @param minuto do horario
      * @param segundo do horario
+     * 
      * @throws Exception para hora, minuto ou segundo invalido
      */
 	public Horario(int hora, int min, int seg) throws Exception {
@@ -30,6 +29,7 @@ public class Horario {
      * construtor para inicializar valores nos campos
      *
      * @param horario do tipo String
+     * 
      * @throws Exception para o horario invalido
      */
 	public Horario(String horario) throws Exception {
@@ -64,7 +64,8 @@ public class Horario {
 	 * @param h inteiro que representa a hora 
 	 * @param m inteiro que representa o minuto
 	 * @param s inteiro que representa o segundo
-	 * @throws Exception para a verificaÁ„o dos this utilizados
+	 * 
+	 * @throws Exception para a verifica√ß√£o dos this utilizados
 	 */
 	public void setHorario(int h, int m, int s) throws Exception {
 		if (Horario.isHorarioValida(h, m, s)) {
@@ -80,7 +81,8 @@ public class Horario {
 	 * modifica o horario em questao
 	 *
 	 * @param horario string que representa o horario
-	 * @throws Exception para a verificaÁ„o dos this utilizados
+	 * 
+	 * @throws Exception para a verifica√ß√£o dos this utilizados
 	 */
 	public void setHorario(String horario) throws Exception {
 		int h = horario.indexOf(":");
@@ -94,7 +96,7 @@ public class Horario {
 		this.setHorario(h, m, s);
 	}
 	/**
-	 * mÈtodo que compara se dois horarios s„o iguals
+	 * m√©todo que compara se dois horarios s√£o iguals
 	 * 
 	 * @param h1 do tipo horario
 	 * @param h2 do tipo horario
@@ -125,7 +127,7 @@ public class Horario {
 		}
 	}
 	/**
-	 * mÈtodo que verifica se um horario e valido
+	 * m√©todo que verifica se um horario e valido
 	 * 
 	 * @param h tipo inteiro
 	 * @param m tipo inteiro
@@ -141,7 +143,7 @@ public class Horario {
 		return false;
 	}
 	/**
-	 * SobreposiÁ„o do mÈtodo toString para retornar o horario
+	 * Sobreposi√ß√£o do m√©todo toString para retornar o horario
 	 * 
 	 * @return retorna uma String com todos os dados
 	 */
