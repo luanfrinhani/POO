@@ -1,14 +1,13 @@
 package prova;
 /**
  * Usada para organizar o evento que ira acontecer
- * 
  * <p>
- * Implementa a interface Comparable, pois implementa o método
- * compareTo que é usado na coleção List. Também poderia ser usado
- * pelo método sort (com um argumento) da classe Collections
+ * Implementa a interface Comparable, pois implementa o mÃ©todo
+ * compareTo que Ã© usado na coleÃ§Ã£o List. TambÃ©m poderia ser usado
+ * pelo mÃ©todo sort (com um argumento) da classe Collections
+ * <p>
  * Classe que agrega a classe itemAgenda
  * <p>
- 
  * @author Luan S. F..
  * @version 1.0 (junho-2019)
  */
@@ -60,7 +59,7 @@ public class Evento extends ItemAgenda implements Comparable<Evento> {
 		this.local = local;
 	}
 	/**
-	 * método que compara se dois eventos sao iguais, utiliza o compareTo da classe Comparable
+	 * mÃ©todo que compara se dois eventos sao iguais, utiliza o compareTo da classe Comparable
 	 * 
 	 * @param evento do tipo Evento
 	 * 
@@ -70,7 +69,7 @@ public class Evento extends ItemAgenda implements Comparable<Evento> {
 		return this.getLocal().compareTo(evento.getLocal());
 	}
 	/**
-	 * Sobreposição do método toString para retornar o toString da classe super, e o local do evento
+	 * SobreposiÃ§Ã£o do mÃ©todo toString para retornar o toString da classe super, e o local do evento
 	 * 
 	 * @return retorna uma String com todos os dados
 	 */
