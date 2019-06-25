@@ -1,10 +1,7 @@
 package prova;
 /**
  * Usada para organizar itens de uma agenda, utiliza a classe periodo como agregacao
- * 
- *
  * <p>
- *
  * @author Luan S. F.
  * @version 1.0 (junho - 2019)
  */
@@ -91,7 +88,7 @@ public abstract class ItemAgenda {
 		this.periodo = periodo;
 	}
 	/**
-	 * Sobreposição do método toString para retornar a descricao, o registro e o periodo do item da agenda
+	 * SobreposiÃ§Ã£o do mÃ©todo toString para retornar a descricao, o registro e o periodo do item da agenda
 	 * 
 	 * @return retorna uma String com todos os dados
 	 */
