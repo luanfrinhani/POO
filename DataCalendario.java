@@ -2,9 +2,7 @@ package prova;
 /**
  * Usada para organizar a data, com o objetivo de receber e modificar varios tipos de datas dada pelo
  * usuario
- *
  * <p>
- *
  * @author Luan S. F.
  * @version 1.0 (junho - 2019)
  */
@@ -21,7 +19,8 @@ public class DataCalendario{
      * @param d dia da data
      * @param m mes da data
      * @param a ano da data
-     * @throws Exception para dia, mês, ano invalido
+     * 
+     * @throws Exception para dia, mÃªs, ano invalido
      */
 	public DataCalendario(int dia, int mes, int ano) 	throws Exception {
 			this.setData(dia,mes,ano);
@@ -30,6 +29,7 @@ public class DataCalendario{
      * construtor para inicializar valores nos campos
      *
      * @param data do formato string
+     * 
      * @throws Exception para a string data
      */
 	public DataCalendario(String data) throws Exception {
@@ -38,7 +38,7 @@ public class DataCalendario{
 	/**
      * construtor default que inicializa a data com o valor default 01/01/1900
      * 
-     * @throws Exception para a verificação dos this utilizados
+     * @throws Exception para a verificaÃ§Ã£o dos this utilizados
      */
 	public DataCalendario() 	throws Exception{
 		this(1,1,1900);
@@ -73,7 +73,8 @@ public class DataCalendario{
 	 * @param dia inteiro que representa o dia do calendario
 	 * @param mes inteiro que representa o mes do calendario
 	 * @param ano inteiro que representa o ano do calendario
-	 * @throws Exception para a verificação dos this utilizados
+	 * 
+	 * @throws Exception para a verificaÃ§Ã£o dos this utilizados
 	 */
 	public void setData(int dia, int mes, int ano) throws Exception {
 			if (DataCalendario.isDataValida(dia,mes,ano)==true) {
@@ -92,7 +93,8 @@ public class DataCalendario{
 	 *
 	 * @param mes inteiro que representa o mes do calendario
 	 * @param ano inteiro que representa o ano do calendario
-	 * @throws Exception para a verificação dos this utilizados
+	 * 
+	 * @throws Exception para a verificaÃ§Ã£o dos this utilizados
 	 */
 	public void setData(int mes,int ano) throws Exception {
 		this.setData(1,mes,ano);
@@ -102,14 +104,15 @@ public class DataCalendario{
 	 * @param dia inteiro que representa o dia do calendario
 	 * @param mes String que representa o mes do calendario
 	 * @param ano inteiro que representa o ano do calendario
-	 * @throws Exception para a verificação dos this utilizados
+	 * 
+	 * @throws Exception para a verificaÃ§Ã£o dos this utilizados
 	 */
 	
 	public void setData(int dia,String s,int ano)	throws Exception {
 		int m=0;
 		if (s.equals("Janeiro")) 	m=1;		
 		if (s.equals("Fevereiro")) m=2;
-		if (s.equals("Março")) 	m=3;
+		if (s.equals("MarÃ§o")) 	m=3;
 		if (s.equals("Abril")) 	m=4;
 		if (s.equals("Maio")) 		m=5;
 		if (s.equals("Junho")) 	m=6;
@@ -123,15 +126,18 @@ public class DataCalendario{
 	}
 	/**
 	 * modifica a data para um valor default
-	 * @throws Exception para a verificação dos this utilizados
+	 * 
+	 * @throws Exception para a verificaÃ§Ã£o dos this utilizados
 	 */
 	public void setData() throws Exception{
 		this.setData(1,1,1900);
 	}
 	/**
 	 * modifica a data quando se recebe um inteiro, uma string e outro inteiro
+	 * 
 	 * @param data String com a data completa
-	 * @throws Exception para a verificação dos this utilizados
+	 * 
+	 * @throws Exception para a verificaÃ§Ã£o dos this utilizados
 	 */
 	
 	public void setData(String s) throws Exception {
@@ -177,14 +183,14 @@ public class DataCalendario{
 		
 	}
 	/**
-	 * método que verifica se a data é valida e cria uma data tipo calendario
+	 * mÃ©todo que verifica se a data Ã© valida e cria uma data tipo calendario
 	 * 
 	 * @param dia numero que representa o dia
-	 * @param mes numero que representa o mês
+	 * @param mes numero que representa o mÃªs
 	 * @param ano numero que representa o ano
 	 * 
 	 * @return retorna a data
-	 * @return retorna null caso a data não seja valida
+	 * @return retorna null caso a data nÃ£o seja valida
 	 */
 	public static DataCalendario verificaECriaData(int dia,int mes, int ano) throws Exception{
 		try {
@@ -196,7 +202,7 @@ public class DataCalendario{
 		}
 	}
 	/**
-	 * método que compara se duas datas são iguals
+	 * mÃ©todo que compara se duas datas sÃ£o iguals
 	 * 
 	 * @param Data1 do tipo DataCalendario
 	 * @param Data2 do tipo DataCalendario
@@ -206,15 +212,15 @@ public class DataCalendario{
 	 * @return retorna 0 caso as datas sejam iguais
 	 */
 	public static int compareTo(DataCalendario Data1,DataCalendario Data2) {
-		if (Data2.getAno()>Data1.getAno()){
+		if (Data1.getAno()>Data2.getAno()){
 			return 1;
 		}
 		else {
-			if (Data2.getMes()>Data1.getMes()) {
+			if (Data1.getMes()>Data2.getMes()) {
 				return 1;
 			}
 			else {
-				if (Data2.getDia()>Data1.getDia()) {
+				if (Data1.getDia()>Data2.getDia()) {
 					return 1;
 				}
 			}
@@ -230,7 +236,7 @@ public class DataCalendario{
 	
 	
 	/**
-	 * método que incrementa dias a uma data
+	 * mÃ©todo que incrementa dias a uma data
 	 * 
 	 */
 	public void incrementa() throws Exception {
@@ -252,7 +258,7 @@ public class DataCalendario{
 		}
 	}
 	/**
-	 * método sobrecarregado que incrementa uma quantidade de dias estipulada
+	 * mÃ©todo sobrecarregado que incrementa uma quantidade de dias estipulada
 	 * 
 	 * @param dias do tipo inteiro, representa quantos dias serao adicionados
 	 * 
@@ -280,7 +286,7 @@ public class DataCalendario{
 		}
 		}
 	/**
-	 * método que verifica se uma data e valida
+	 * mÃ©todo que verifica se uma data e valida
 	 * 
 	 * @param dia tipo inteiro
 	 * @param mes tipo inteiro
@@ -323,9 +329,10 @@ public class DataCalendario{
 	}
 	
 	/**
-	 * método que verifica se um ano e bissexto
+	 * mÃ©todo que verifica se um ano e bissexto
 	 * 
 	 * @param ano do tipo inteiro
+	 * 
 	 * @return retorna true se for bissexto
 	 * @return retorna false se nao for bissexto
 	 */
@@ -338,7 +345,7 @@ public class DataCalendario{
 		}	
 	}
 	/**
-	 * Sobreposição do método toString para retornar a data
+	 * SobreposiÃ§Ã£o do mÃ©todo toString para retornar a data
 	 * 
 	 * @return retorna uma String com todos os dados
 	 */
@@ -352,9 +359,10 @@ public class DataCalendario{
 		return dados.toString();
 	}
 	/**
-	 * método que verifica se uma data objeto e igual a uma passada por parametro
+	 * mÃ©todo que verifica se uma data objeto e igual a uma passada por parametro
 	 * 
 	 * @param objeto do tipo objeto
+	 * 
 	 * @return retorna true se forem iguais
 	 * @return retorna false se forem diferentes
 	 */
